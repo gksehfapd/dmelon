@@ -3,3 +3,8 @@
 /uploads
 /assets
 /build
+
+node_modules
+uploads
+assets
+build
