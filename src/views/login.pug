@@ -1,0 +1,17 @@
+extends base
+
+block content
+    div.loginPage
+        div.loginHeight
+            if errorMessage
+                span=errorMessage
+            form(method="POST")
+                div
+                    input(placeholder="Nickname", name="nickname", type="text", required)
+                div
+                    input(placeholder="Password", name="password", type="password", required)
+                div
+                    input(type="submit", value="Login")
+                div.auth-switch
+                    span Don't have an account? 
+                    a(href="/join") Create one now →

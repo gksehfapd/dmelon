@@ -1,0 +1,19 @@
+mixin song(song)
+    div.songList
+        div.songInfo(data-audioId=song._id, data-audioUrl=song.fileUrl, data-imgUrl=song.thumbUrl, data-title=song.title, data-singer=song.singer)
+            div.imgArea
+                img(src=`${song.thumbUrl}` alt="no").songCover__img
+                h1.songRank #{song.rank+1}
+            div.songInfo-singer
+                div.songInfo-singer__info
+                    h4.songTitle #{song.title}
+                    ul.songSinger
+                        li
+                            div #{song.singer}
+                div.songLength
+                    h4.songDuration #{song.runningTime}
+                    h4 #{song.meta.listeners} hits!
+                div.songUrl.hidden #{song.fileUrl}
+        div
+            i.fas.fa-file-medical.addList
+    hr

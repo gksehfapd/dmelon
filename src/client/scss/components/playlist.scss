@@ -1,0 +1,54 @@
+.playListTitle {
+	font-size: 20px;
+	margin-bottom: 16px;
+}
+
+.playListArea {
+	width: 60%;
+	height: 40vh;
+}
+
+.playlistSelect {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	border-bottom: 1.5px solid white;
+}
+
+.playlistInfo:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.playlistInfo:active {
+	opacity: 0.9;
+}
+
+.playlistInfo {
+	display: flex;
+	width: 85%;
+	justify-content: space-between;
+	align-items: center;
+	.playlistInfo-singer {
+		width: 60%;
+		height: 60px;
+		font-size: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.playlistThumb {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+.fa-minus-square:hover {
+	opacity: 0.7;
+}
+.fa-minus-square:active {
+	opacity: 0.9;
+}

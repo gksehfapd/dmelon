@@ -1,0 +1,15 @@
+extends base.pug
+
+block content
+    form.uploadForm(method="POST", enctype="multipart/form-data")
+        label(for='title') Title
+        input(placeholder="Title", required, type="text", name="title")
+        label(for='singer') Singer
+        input(placeholder="Singer", required, type="text", name="singer")
+        label(for="thumb") Thumbnail File
+        input(type="file", accept="image/*", required, id="thumb", name="thumb")
+        label(for="audioFile") Audio File
+        input(type="file", accept="audio/*", required, id="audio", name="audio")
+        label(for='runningTime') Running Time
+        input(type='text' required, name='runningTime', id='runningTime' placeholder='00:00') 
+        input(type="submit", value="Upload Audio")

@@ -1,0 +1,10 @@
+mixin playlist(playlist)
+    div.playlistSelect
+        div.playlistInfo(data-audioUrl=playlist.fileUrl, data-audioId=playlist._id, data-fetchaudio=playlist.audioId, data-imgUrl=playlist.thumbUrl, data-title=playlist.title, data-singer=playlist.singer)
+            img.playlistThumb(src=`${playlist.thumbUrl}`, alt='!') 
+            div.playlistInfo-singer
+                h4.playlistTitle #{playlist.title}
+                h4.playlistSinger #{playlist.singer}
+            h4 #{playlist.runningTime}
+        div.playlistDel
+            i.fas.fa-minus-square

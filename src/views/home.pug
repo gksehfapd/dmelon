@@ -1,0 +1,23 @@
+extends base
+include mixins/song
+include mixins/audio
+include mixins/playlist
+
+block content
+    div.set
+        div.playerArea
+            div.audioArea
+                +audio(audio)
+            div.playListArea
+                h4.playListTitle PLAY LIST
+                div.playList
+                    each playlist in playlists
+                        +playlist(playlist)
+        div.rankArea
+            h4.musicRankTitle MUSIC RANK
+            div.musicList
+                each song in songs
+                    +song(song)
+                else
+                    li Sorry nothing found
+        div.check.hidden

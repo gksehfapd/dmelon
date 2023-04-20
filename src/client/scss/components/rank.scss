@@ -1,0 +1,40 @@
+.rankArea {
+	width: 50%;
+	height: 80vh;
+
+	.musicRankTitle {
+		font-size: 20px;
+		width: 100%;
+		background-color: $bg;
+	}
+}
+
+.musicList {
+	overflow: overlay;
+	overflow-x: hidden;
+	height: 95%;
+}
+
+.musicList::-webkit-scrollbar {
+	width: 0.5vw;
+}
+
+.musicList::-webkit-scrollbar-thumb {
+	background-color: hsla(0, 0%, 20%, 0.49);
+	border-radius: 100px;
+}
+
+.playList {
+	overflow: overlay;
+	overflow-x: hidden;
+	height: 95%;
+}
+
+.playList::-webkit-scrollbar {
+	width: 0.5vw;
+}
+
+.playList::-webkit-scrollbar-thumb {
+	background-color: hsla(0, 0%, 20%, 0.49);
+	border-radius: 100px;
+}

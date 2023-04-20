@@ -1,0 +1,13 @@
+header
+    nav
+        ul
+            if loggedIn
+                li#username #{loggedInUser.nickname}
+                li
+                    a(href="/users/logout").login Log Out
+            else
+                li
+                    a(href="/join").header__btn Join
+                li
+                    a(href="/login").login Login                        
+            
