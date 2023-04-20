@@ -9,6 +9,8 @@ const s3 = new aws.S3({
 	}
 })
 
+const isHeroku = process.env.NODE_ENV === 'production'
+
 const multerUploader = multerS3({
 	s3: s3,
 	bucket: 'dmelon',
@@ -27,5 +29,5 @@ export const audioUpload = multer({
 	limits: {
 		fileSize: 10240000
 	},
-	storage: multerUploader
+	storage: isHeroku ? multerUploader : undefined
 })

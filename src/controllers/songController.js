@@ -33,11 +33,12 @@ export const getUpload = (req, res) => {
 export const postUpload = async (req, res) => {
 	const { title, singer, runningTime } = req.body
 	const { thumb, audio } = req.files
+	const isHeroku = process.env.NODE_ENV === 'production'
 	const song = new Song({
 		title,
 		singer,
-		thumbUrl: thumb[0].location,
-		fileUrl: audio[0].location,
+		thumbUrl: isHeroku ? thumb[0].location : thumb[0].path,
+		fileUrl: isHeroku ? audio[0].location : audio[0].path,
 		runningTime
 	})
 	await song.save()
