@@ -2,9 +2,6 @@
 	"name": "dMelon",
 	"version": "1.0.0",
 	"description": "xxxx",
-	"engines": {
-		"node": "14.x"
-	},
 	"scripts": {
 		"start": "node build/init.js",
 		"build": "npm run build:server && npm run build:assets",
