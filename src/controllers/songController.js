@@ -36,8 +36,8 @@ export const postUpload = async (req, res) => {
 	const song = new Song({
 		title,
 		singer,
-		thumbUrl: thumb[0].path,
-		fileUrl: audio[0].path,
+		thumbUrl: thumb[0].location,
+		fileUrl: audio[0].location,
 		runningTime
 	})
 	await song.save()
