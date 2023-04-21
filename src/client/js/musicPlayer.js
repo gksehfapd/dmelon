@@ -33,6 +33,7 @@ const autoNext = () => {
 		let playingIdx = rankArr.findIndex((e) => e === audio.src)
 		if (playingIdx + 1 < rankArr.length) {
 			audio.src = rankArr[playingIdx + 1]
+			console.log(rankArr)
 			playingCoverImg.src = rankImgArr[playingIdx + 1]
 			playingTitle.innerText = rankTitleArr[playingIdx + 1]
 			playingSinger.innerText = rankSingerArr[playingIdx + 1]
