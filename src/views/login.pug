@@ -3,10 +3,10 @@ extends base
 block content
     div.loginPage
         div.loginHeight
-            if errorMessage
-                span=errorMessage
             form(method="POST")
-                div
+                if errorMessage
+                    span=errorMessage
+                div.nickname
                     input(placeholder="Nickname", name="nickname", type="text", required)
                 div
                     input(placeholder="Password", name="password", type="password", required)
