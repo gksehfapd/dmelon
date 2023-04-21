@@ -3,16 +3,24 @@ const songInfo = rankArea.querySelectorAll('.songInfo')
 
 const check = document.querySelector('.check')
 
+const isHeroku = process.env.NODE_ENV === 'production'
+
 const getSongInfoArr = Array.from(songInfo)
-const rankArr = getSongInfoArr.map((e) => location.href + e.dataset.audiourl)
-const rankImgArr = getSongInfoArr.map((e) => location.href + e.dataset.imgurl)
+const rankArr = getSongInfoArr.map((e) =>
+	isHeroku ? e.dataset.audiourl : location.href + e.dataset.audiourl
+)
+const rankImgArr = getSongInfoArr.map((e) =>
+	isHeroku ? e.dataset.imgurl : location.href + e.dataset.imgurl
+)
 const rankTitleArr = getSongInfoArr.map((e) => e.dataset.title)
 const rankSingerArr = getSongInfoArr.map((e) => e.dataset.singer)
 
 const playlist = document.querySelector('.playList')
 const playlistInfo = playlist.querySelectorAll('.playlistInfo')
 const getPlaylistArr = Array.from(playlistInfo)
-const playlistArr = getPlaylistArr.map((e) => location.href + e.dataset.audiourl)
+const playlistArr = getPlaylistArr.map((e) =>
+	isHeroku ? e.dataset.audiourl : location.href + e.dataset.audiourl
+)
 const playlistImgArr = getPlaylistArr.map((e) => e.dataset.imgurl)
 const playlistTitleArr = getPlaylistArr.map((e) => e.dataset.title)
 const playlistSingerArr = getPlaylistArr.map((e) => e.dataset.singer)
@@ -33,7 +41,7 @@ const autoNext = () => {
 		let playingIdx = rankArr.findIndex((e) => e === audio.src)
 		if (playingIdx + 1 < rankArr.length) {
 			audio.src = rankArr[playingIdx + 1]
-			console.log(rankArr)
+			console.log(rankTitleArr[playingIdx + 1])
 			playingCoverImg.src = rankImgArr[playingIdx + 1]
 			playingTitle.innerText = rankTitleArr[playingIdx + 1]
 			playingSinger.innerText = rankSingerArr[playingIdx + 1]
